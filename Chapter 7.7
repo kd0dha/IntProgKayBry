@@ -1,8 +1,42 @@
-data_title = str(input('Enter a title for the data:'))
-print('You entered:', data_title)
+data_title = input('Enter a title for the data:\n')
+print('You entered: {}\n' .format(data_title))
 
-column_1 = str(input('Enter the column 1 header:'))
-print('You entered:', column_1)
+column_1 = input('Enter the column 1 header:\n')
+print('You entered:', column_1) 
 
-column_2 = str(input('Enter the column 2 header:'))
-print('You entered:', column_2)
+column_2 = input('Enter the column 2 header:\n')
+print('You entered: {}\n' .format(column_2))
+
+dataStrings = []
+
+dataIntegers = []
+
+while True:
+    userInput = input('Enter a data point (-1 to stop input):\n')
+    splitData = userInput.split(',')
+    if userInput == '-1':
+        print()
+        break
+    elif ',' not in userInput:
+        print('Error: No comma in string.\n')
+    elif userInput.count(',') >= 2:
+        print('Error: Too many commas in input.\n')
+    elif splitData[1].replace(' ','').isdigit() == False:
+        print('Error: Comma not followed by an integer.\n')
+    else:
+        print('Data string: {}' .format(splitData[0]))
+        print('Data integer: {}\n' .format(splitData[1].replace(' ', '')))
+        dataStrings.append(splitData[0])
+        dataIntegers.append(splitData[1])
+print('%33s' % data_title)
+print('%-20s|%23s' % (column_1, column_2))
+for i in range(54):
+    print('-', end='')
+print()
+for i in range(len(dataStrings)):
+    print('%-20s|%23s' % (dataStrings[i], dataIntegers[i]))
+
+print('')
+for i in range(len(dataStrings)):
+    print('%20s' % dataStrings[i], end=' ')
+    print('*' * int(dataIntegers[i]))
