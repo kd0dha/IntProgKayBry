@@ -2,9 +2,11 @@
 # and displays their first, middle, and last initials.
 #For example, if the user enters John William Smith, the program should display J.W.S.
 
-user_string = str(input('Enter your first, middle and last name:'))
+name = input('Type your full name and press ENTER. ')
+name_list = name.split()
 
-user_split = user_string.split()
+first = name_list[0][0]
+second = name_list[1][0]
+last = name_list[2][0]
 
-#This prints the First name
-print(user_split[0])
+print(first,'.', second,'.', last, '.')
