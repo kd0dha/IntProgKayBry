@@ -1,2 +1,36 @@
+def vowel_count_of_string(user_string):
+    if 'a' in user_string:
+        vowel_count = vowel_count + 1
+    elif 'e' in user_string:
+        vowel_count = vowel_count + 1
+    elif 'i' in user_string:
+        vowel_count = vowel_count + 1
+    elif 'o' in user_string:
+        vowel_count = vowel_count + 1
+    elif 'u' in user_string:
+        vowel_count = vowel_count + 1
+    elif 'y' in user_string:
+        vowel_count = vowel_count + 1
+    print('There are', vowel_count, 'vowels in the string')
 
-write a program with a function that accepts a string as an argument and returns the numbers of vowels that the srting contains. The application should have another funciton that accepts a string as an argument.....
+def consonant_count_in_string(user_string):
+    letter_count = len(user_string)
+    if 'a' in user_string:
+        letter_count = letter_count - 1
+    elif 'e' in user_string:
+        letter_count = letter_count - 1
+    elif 'i' in user_string:
+        letter_count = letter_count - 1
+    elif 'o' in user_string:
+        letter_count = letter_count - 1
+    elif 'u' in user_string:
+        letter_count = letter_count - 1
+    elif 'y' in user_string:
+        letter_count = letter_count - 1
+    print('There are', letter_count, 'consonants in the string')
+
+
+user_input = str(input('Enter a string:')
+
+print(consonant_count_in_string(user_string))
+print(vowel_count_of_string(user_string))
