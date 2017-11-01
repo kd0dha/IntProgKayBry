@@ -1,11 +1,11 @@
-data_title = input('Enter a title for the data:\n')
-print('You entered: {}\n' .format(data_title))
+dataTitle = input('Enter a title for the data:\n')
+print('You entered: {}\n' .format(dataTitle))
 
-column_1 = input('Enter the column 1 header:\n')
-print('You entered:', column_1) 
+column1 = input('Enter the column 1 header:\n')
+print('You entered: {}\n' .format(column1))
 
-column_2 = input('Enter the column 2 header:\n')
-print('You entered: {}\n' .format(column_2))
+column2 = input('Enter the column 2 header:\n')
+print('You entered: {}\n' .format(column2))
 
 dataStrings = []
 
@@ -28,8 +28,8 @@ while True:
         print('Data integer: {}\n' .format(splitData[1].replace(' ', '')))
         dataStrings.append(splitData[0])
         dataIntegers.append(splitData[1])
-print('%33s' % data_title)
-print('%-20s|%23s' % (column_1, column_2))
+print('%33s' % dataTitle)
+print('%-20s|%23s' % (column1, column2))
 for i in range(54):
     print('-', end='')
 print()
