@@ -6,4 +6,36 @@
 #in the original translated to their numeric equivalent. For example,
 #555-GET-FOOD displays 555-438-3663
 
+user_number = str(input('Enter a phone number'))
 
+translation = user_input[:]  # Make a copy of the string
+
+translation = translation.replace('A', '2')
+translation  = translation.replace('B', '2')
+translation  = translation.replace('C', '2')
+translation  = translation.replace('D', '3')
+translation  = translation.replace('E', '3')
+translation  = translation.replace('F', '3')
+translation  = translation.replace('G', '4')
+translation  = translation.replace('H', '4')
+translation  = translation.replace('I', '4')
+translation  = translation.replace('J', '5')
+translation  = translation.replace('K', '5')
+translation  = translation.replace('L', '5')
+translation  = translation.replace('M', '6')
+translation  = translation.replace('N', '6')
+translation  = translation.replace('O', '6')
+translation  = translation.replace('P', '7')
+translation  = translation.replace('Q', '7')
+translation  = translation.replace('R', '7')
+translation  = translation.replace('S', '7')
+translation  = translation.replace('S', '7')
+translation  = translation.replace('T', '8')
+translation  = translation.replace('U', '8')
+translation  = translation.replace('V', '8')
+translation  = translation.replace('W', '9')
+translation  = translation.replace('X', '9')
+translation  = translation.replace('Y', '9')
+translation  = translation.replace('Z', '9')
+
+print('Translation:', translation)
