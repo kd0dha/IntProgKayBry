@@ -1,1 +1,12 @@
 
+userInput = input('Enter your sentence here:')
+Sentence = userInput.split()
+
+PigLatin = ""
+
+for word in Sentence:
+  PigLatin = PigLatin + word[1:] + word[0] +'ay '
+  
+PigLatin = PigLatin[:-1]
+
+print('PigLatin!:{}'.format(PigLatin))
