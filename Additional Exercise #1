@@ -1,12 +1,8 @@
-#Write a program that gets a string containing a person's first, middle, and last names,
-# and displays their first, middle, and last initials.
-#For example, if the user enters John William Smith, the program should display J.W.S.
+fullName = input("What is your full name?\n")
+nameListed = fullName.split(" ")
+FInitial = nameListed[0][0]
+SInitial = nameListed[1][0]
+TInitial = nameListed[2][0]
 
-full_name = input('Type your full name and press ENTER. ')
-name_list = full_name.split()
+print('%s.%s.%s.' % (FInitial, SInitial, TInitial))
 
-first = name_list[0][0]
-second = name_list[1][0]
-last = name_list[2][0]
-
-print(first,'.', second,'.', last, '.')
