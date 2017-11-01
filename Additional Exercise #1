@@ -3,3 +3,8 @@
 #For example, if the user enters John William Smith, the program should display J.W.S.
 
 user_string = str(input('Enter your first, middle and last name:'))
+
+user_split = user_string.split()
+
+#This prints the First name
+print(user_split[0])
