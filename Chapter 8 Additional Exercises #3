@@ -12,5 +12,7 @@ dict = {'A' : '@', 'B' : '%', 'C' : '!', 'D' : '#', 'E' : '^', 'F' : '*', 'G' : 
    }
 
 for letter in encryption_list
-replace (encryption_list)
+
+str = 'Hello There'
+print str.replace ('encryption_list')
    
