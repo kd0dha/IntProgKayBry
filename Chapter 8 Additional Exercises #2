@@ -1,6 +1,12 @@
 #Design a program that uses a list and show how some of the functions learned in the chapter could be used.
 
-my_list[23, 57, 778, 1000000]
+my_list = [23, 57, 778, 1000000]
+
+del my_list [2]
+my_list[-1] = 867
+
+print(my_list)
+
 
 #MAX
 #MIN
