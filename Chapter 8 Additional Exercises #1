@@ -1,1 +1,6 @@
+#Design a program that lets the user enter the total rainfalls for each of the 12 months into a list. 
+#The program should calculate and display the total rainfall for the year, the average monthly rainfall,
+#the months with the highest and lowest amounts.Usea function to enter the data into the list, 
+#use another function to calculate and display the statistics asked above.
+
 
