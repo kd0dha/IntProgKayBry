@@ -1,1 +1,11 @@
 #Design a program that uses a dictionary and show how some of the methods learned in the chapter could be used
+Dict = {'Kaylee' : 23, 'Kasi': 20, 'Britton':18}
+print(Dict)
+print(Dict['Kaylee'])
+Dict['Jim'] = 27
+print(Dict)
+Dict['Jim']= 28
+print(Dict)
+
+del Dict ['Jim']
+print(Dict)
