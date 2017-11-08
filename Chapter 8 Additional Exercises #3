@@ -1,5 +1,62 @@
 #Write a dictionary that uses a dictionary to assign ‘codes’to each letter of the alphabet. 
 #For example:codes = {‘A’: ‘@’,‘a’: ‘9’, ‘B’:‘%’, ‘b’:‘#’, etc...}Using this example, the letter A would be assigned the symbol @, 
 #the letter a would be assigned the number 9, the letter B would be assigneda symbol %, and so forth.
-#The program shouldimplementa function to input a sentence,then use the dictionary to write an encryptedversion of the input and display it.
+#The program should implement a function to input a sentence,then use the dictionary to write an encrypted version of the input and display it.
 #Write a second function that takes the encryptedtext and displays its decrypted content
+
+#write a dictionary
+
+A = @
+B = %
+C = !
+D = #
+E = ^
+F = *
+G = &
+H = _
+I = (
+J = -
+K = )
+L = /
+M = [
+N = }
+O = ]
+P = {
+Q = a
+R = m
+S = c
+T = +
+U = l
+W = b
+X = =
+Y = ~
+Z = f
+a = `
+b = k
+c = :
+d = n
+e = >
+f = <
+g = j
+h = ;
+i = d
+j = z
+k = o
+l = y
+m = i
+n = x
+o = p
+p = v
+q = q
+r = h
+s = e
+t = r
+u = u
+v = g
+w = s
+x = t
+y = w
+z = f
+ 
+for i in encryption_list:
+   #Replace with encryption
