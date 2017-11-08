@@ -11,5 +11,6 @@ dict = {'A' : '@', 'B' : '%', 'C' : '!', 'D' : '#', 'E' : '^', 'F' : '*', 'G' : 
    'x' : 't', 'y' : 'w', 'z' : 'f'
    }
 
-for letter in encryption_list:
+for letter in encryption_list
+replace (encryption_list)
    
