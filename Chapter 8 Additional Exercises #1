@@ -4,3 +4,12 @@
 #use another function to calculate and display the statistics asked above.
 
 
+def function_a(user_input):
+  #FIXME: accept 12 months of inputs into a list
+  print(rain_by_month)
+  
+def function_b()
+  sum(rain_by_month)
+  #FIXME: print average monthly rainfall (sum/len)
+  #FIXME: print MAX rainfall of list
+  #FIXME: print MIN rainfall of list
