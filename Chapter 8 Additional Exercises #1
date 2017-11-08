@@ -3,13 +3,30 @@
 #the months with the highest and lowest amounts.Usea function to enter the data into the list, 
 #use another function to calculate and display the statistics asked above.
 
-
+rain_by_month = []
 def function_a(user_input):
-  #FIXME: accept 12 months of inputs into a list
-  print(rain_by_month)
+  month = 12
+  if months > 0:
+     #FIXME: accept 12 months of inputs into a list
+     user_input = int(input('Enter a rainfall total'))
+     rain_by_month.append(user_input)
+     months -= 1
+return rain_by_month
   
 def function_b()
   sum(rain_by_month)
-  #FIXME: print average monthly rainfall (sum/len)
-  #FIXME: print MAX rainfall of list
-  #FIXME: print MIN rainfall of list
+  
+  #Average Rainfall
+  average_rainfall = sum(rain_by_month)/ len(rain_by_month)
+  print(average_rainfall)
+  
+  #MAX of rainfall list
+  print(max(rain_by_month))
+  
+  #MIN of rainfall list
+  print(min(rain_by_month))
+ 
+  return
+
+function_a()
+function_b()
