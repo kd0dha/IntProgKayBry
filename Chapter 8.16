@@ -1,1 +1,27 @@
 
+weight_list = 4
+weight = []
+
+weight_num = 0
+count = 1
+while weight_num < weight_list:
+    num = float(input('Enter weight {}:\n' .format(count)))
+    print(num)
+    weight.append(num)
+    weight_num += 1
+    count += 1
+print('Weights: {}\n' .format(weight))
+
+average = sum(weight) / len(weight)
+print('Average weight: {}' .format(average))
+
+max = max(weight)
+print('Max weight: {:.2f}' .format(max))
+
+index_location = int(input('Enter a list index location (1 - 4):\n'))
+print(index_location)
+print('Weight in pounds:{:.2f}' .format(weight[index_location]))
+print('Weight in kilograms:{:.2f}' .format(weight[index_location] / 2.2))
+
+weight.sort()
+print('Sorted_list: {}' .format(weight))
