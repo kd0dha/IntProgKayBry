@@ -27,5 +27,11 @@ The CellPhone class will be imported into several programs that your team is dev
 test the class, you write the code. This is a simple program that prompts the user for the
 phone’s manufacturer, model number, and retail price. An instance of the CellPhone class is
 created and the data is assigned to its attributes.
-Sample Program Output (with input shown in bold)
+Sample Program Output (with input shown in bold)- these are the first Acme Electronics, M1000, 199.99
 Enter the manufacturer: Acme Electronics
+Enter the model number: M1000
+Enter the retail price: 199.99
+Here is the data that you entered:
+Manufacturer: Acme Electronics
+Model Number: M1000
+Retail Price: $199.99
