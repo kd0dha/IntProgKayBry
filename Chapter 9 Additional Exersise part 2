@@ -11,9 +11,6 @@ employee on the screen.
 
 I CANT FIGURE OUT HOW TO GET THE FINAL PRODUCT IN THE ORDER ON INSTRUCTIONS IT GIVES ME AN ERROR MESSAGE WHEN I TRY 
 AND SWITCH IT AROUND
-
-
-
 class Person:
 
     def __init__(self, name, ID, Department):
