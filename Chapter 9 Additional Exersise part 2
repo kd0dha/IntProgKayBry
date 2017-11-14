@@ -23,15 +23,17 @@ class Employee(Person):
     def __str__(self):
         return super().__str__() + ", " +  self.StaffTitle
 
+w = Person("Jane Nelson" ",", 45, "Manager")
 
-x = Employee("Susan Meyers", 47899, "Accounting", "Vice president")
+x = Employee("Susan Meyers" ",", 47899, "Accounting", "Vice president")
 
-y = Employee("Marke Jones", 39119, "IT", "Programming")
+y = Employee("Marke Jones" ",", 39119, "IT", "Programming")
 
-z = Employee("Joy Rogers", 81774, "Manufacturing", "Engineering")
+z = Employee("Joy Rogers" ",", 81774, "Manufacturing", "Engineering")
 
-
+print(w)
 print(x)
 
 print(y)
 print(z)
+
