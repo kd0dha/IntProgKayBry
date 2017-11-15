@@ -1,2 +1,88 @@
+class ItemToPurchase:
 
-ONLY HAVE TO DO PARTS 1 AND 2
+    def __init__(self):
+
+        self.item_name = "none";
+        self.item_price = 0;
+        self.item_quantity = 0;
+        self.item_description = "none";
+        
+      
+    def print_item_cost(self):
+
+        print(" " + self.item_name + " " + str(self.item_quantity) + " @ $" + str(self.item_price) + " = $" + str( self.item_price * self.item_quantity ));
+
+class ShoppingCart:
+
+    def __init__(self):
+
+        self.customer_name = 'none';
+        self.current_date = 'January 1, 2016';
+        self.cart_items = cart_items()
+
+    def add_item(self, ItemToPurchase):
+        #FIXME: Add an item to the cart_items list. Does not return anything 
+
+    def remove_item(self, self.item_name):
+        #FIXME: Removes an item from the cart_items list. Does not return anything.
+        if name in cart_items:
+            cart_items.remove(self.item_name)
+        else:
+            print('Item not found in cart. Nothing removed.')
+
+    def modify_item(self):
+        #Modifies an item's description, price, and/or quantity. Has parameter ItemToPurchase. Does not return anything.
+        parameter_change = str(input('Enter what parameter you want to change (Description, Quantity, or Price:'))
+        user_change = str(input('Enter the change you would like to enter'))
+        if parameter_change == 'Description':
+            #change the description
+        elif parameter_change == 'Quantity':
+            #change quantity
+        elif parameter_change == 'Price':
+            #change price
+        else:
+            print('Try again')
+    def get_num_items_in_cart(self):
+
+    def get_cost_of_cart(self):
+
+    def print_total(self):
+        print('%s\'s Shopping Cart - %s' % (self.customer_name, self.current_date))
+        print('
+
+    def print_descriptions(self):
+
+    
+    
+def main():
+
+   print("\n Item 1 \n");
+  
+   item1 = ItemToPurchase();
+  
+   item1.item_name = input(' Enter the item name: ');
+   item1.item_price = int(input('\n Enter the item price: '));
+   item1.item_quantity = int(input('\n Enter the item quantity: '));
+
+   print('\n %s: %s' % (item1.item_name, item1.item_description))
+  
+   print("\n\n\n Item 2 \n");
+  
+   item2 = ItemToPurchase();
+  
+   item2.item_name = input(' Enter the item name: ');
+   item2.item_price = int(input('\n Enter the item price: '));
+   item2.item_quantity = int(input('\n Enter the item quantity: '));
+
+   print('\n %s: %s' % (item2.item_name, item2.item_description))
+  
+   print("\n\n\n TOTAL COST \n\n");
+  
+   item1.print_item_cost();
+   item2.print_item_cost();
+  
+   total = (item1.item_price * item1.item_quantity) + (item2.item_price * item2.item_quantity);
+  
+   print("\n\n Total: $" + str(total));
+  
+main();
