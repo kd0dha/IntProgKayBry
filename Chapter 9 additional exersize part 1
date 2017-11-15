@@ -35,3 +35,38 @@ Here is the data that you entered:
 Manufacturer: Acme Electronics
 Model Number: M1000
 Retail Price: $199.99
+
+
+
+class CellPhone:
+    def __init__(self, manufacturer, model, price):
+        self.manufact = manufacturer
+        self.model = model
+        self.retail_price = price
+
+    def set_manufact(self, manufacturer):
+        self.manufact = manufacturer
+
+    def set_model(self, model):
+        self.model = model
+
+    def set_retail_price(self, price):
+        self.retail_price = price
+
+    def get_manufact(self):
+        return self.manufact
+
+    def get_model(self):
+        return self.model
+
+    def get_retail_price(self):
+        return self.retail_price
+
+manufacturer = input('Enter the manufacturer: ')
+model = input('Enter the model number: ')
+price = float(input('Enter the retail price: '))
+phone = CellPhone(manufacturer, model, price)
+print('Here is the data that you have entered')
+print('Manufacturer: ' + phone.get_manufact())
+print('Model Number: ' + phone.get_model())
+print('Retail Price: $' + '%.2f' % phone.get_retail_price())
