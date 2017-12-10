@@ -1,4 +1,22 @@
 
+
+def EnterItems(items):
+    ShoppingList = {}
+    print ('\nEnter item and price.\n\n')
+    for i in range(items):
+        key = raw_input('Item %d Name: ' % int(i+1))
+        value = raw_input('Item %d Price: $' % int(i+1))
+        print()
+        ShoppingList[key] = value
+    os.system('cls')
+
+EnterItems(items)
+
+
+
+
+
+
 print ('Welcome to K&B Shopping List App')
 
 ShoppingList = [] #this is an empty dictionary...
@@ -12,6 +30,13 @@ while add.lower() == 'y':
 
 print()
 print('Here is your shopping list.')
+
+
+
+
+
+
+
 
 import tkinter
 import tkinter.messagebox
