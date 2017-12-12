@@ -1,0 +1,54 @@
+meals = {
+    'Chicken Alfredo': 'Chicken, Pasta, Sauce, Cheese',
+    'Lasagna': 'Meat, Sauce, Pasta',
+    'Stir Fry': 'Vegtables, Meat, Tortillas'
+    }
+print('These meals are already saved:', meals)
+user_meal = input('\nPlease enter the name of you desired meal:')
+if user_meal in meals:
+    print('That meal is already saved. It is made of:', meals.get(user_meal))
+else:
+    print('Meal not found, would you like to add it?')
+    user_add = input('Please enter y for yes, or n for no.')
+    if user_add == 'y':
+        dict_k = input('Enter the meal name:')
+        if dict_k in meals:
+            print('Meal already exists, please try again.')
+            dict_k = input('One last time, Enter the meal name:')
+            if dict_k in meals:
+                print('Sorry, this meal is already saved. Let\'s try again later.')
+            else:
+                dict_v = input('Enter the ingredients, followed by commas. IE: Meat, Potatoes:')
+                print('Your new meal\'s name is', dict_k)
+                print('Your new meal is made of:', meals.get(dict_k, dict_v))
+        else:
+            dict_v = input('Enter the ingredients, followed by commas. IE: Meat, Potatoes:')
+            meals[dict_k] = dict_v
+            print('Meal succesfully added. You new menu is:', meals)
+            print('\nYour new meal\'s name is', dict_k)
+            print('Your meal is made of', meals.get(dict_k, (dict_k, dict_v)))
+    elif user_add == 'n':
+        print('Ok, lets move on.')
+    else:
+        user_add = input('Please try again, using y or n only.')
+        if user_add == 'y':
+            dict_k = input('Enter the meal name:')
+            if dict_k in meals:
+                print('Meal already exists, please try again.')
+                dict_k = input('One last time, Enter the meal name:')
+                if dict_k in meals:
+                    print('Sorry, this meal is already saved. Let\'s try again later.')
+                else:
+                    dict_v = input('Enter the ingredients, followed by commas. IE: Meat, Potatoes:')
+                    print('Your new meal\'s name is', dict_k)
+                    print('Your new meal is made of:', meals.get(dict_k, dict_v))
+            else:
+                dict_v = input('Enter the ingredients, followed by commas. IE: Meat, Potatoes:')
+                meals[dict_k] = dict_v
+                print('Meal succesfully added. You new menu is:', meals)
+                print('\nYour new meal\'s name is', dict_k)
+                print('Your meal is made of', meals.get(dict_k, (dict_k, dict_v)))
+        elif user_add == 'n':
+            print('Ok, lets move on.')
+        else:
+            print('Sorry, we will have to try to add a meal later. Let\'s move on.')
