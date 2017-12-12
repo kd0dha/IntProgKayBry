@@ -1,163 +1,172 @@
-
-
-def EnterItems(items):
-    ShoppingList = {}
-    print ('\nEnter item and price.\n\n')
-    for i in range(items):
-        key = raw_input('Item %d Name: ' % int(i+1))
-        value = raw_input('Item %d Price: $' % int(i+1))
-        print()
-        ShoppingList[key] = value
-    os.system('cls')
-
-EnterItems(items)
-
-
-
-
-
-
-print ('Welcome to K&B Shopping List App')
-
-ShoppingList = [] #this is an empty dictionary...
-
-add = input('Do you want to add something to your list? Y or N!') 
-
-while add.lower() == 'y':
-    item = input ('Enter item to your list:')
-    ShoppingList.append(item)
-    add - input('Want to add more to your list?')
-
-print()
-print('Here is your shopping list.')
-
-
-
-
-
-
-
-
+#GUI
+from tkinter import *
 import tkinter
-import tkinter.messagebox
+import random
 
-#create root window
-root = tkinter.Tk()
 
-class ShoppingList:
-    def __init__(self:
-        #create the main window.
-        self.main_window = tkinter.Tk()
-        # Create two frames. One for the checkbuttons
-        # and another for the regular Button widgets.
-        self.top_frame = tkinter.Frame(self.main_window)
-        self.bottom_frame = tkinter.Frame(self.main_window)
+#opening file, will be written to later.
+f = open('TextFile.txt','w')
+#default list
+foods = []
+#quantity dictionary
+ItemQuan = {
+    'Chicken': '1',
+    'Pasta': '1',
+    'Sauce': '1',
+    'Cheese': '1'
+}
+#price dictionary
+ItemPrice = {
+    'Chicken': 300,
+    'Pasta': 150,
+    'Sauce': 236,
+    'Cheese': 180
+}
 
-        # Create three IntVar objects to use with
-        # the Checkbuttons.
-        self.cb_var1 = tkinter.IntVar()
-        self.cb_var2 = tkinter.IntVar()
-        self.cb_var3 = tkinter.IntVar()
-        self.cb_var4 = tkinter.IntVar()
-        self.cb_var5 = tkinter.IntVar()
-        self.cb_var6 = tkinter.IntVar()
-        self.cb_var7 = tkinter.IntVar()
 
-        # Set the intVar objects to 0.
-        self.cb_var1.set(0)
-        self.cb_var2.set(0)
-        self.cb_var3.set(0)
-        self.cb_var4.set(0)
-        self.cb_var5.set(0)
-        self.cb_var6.set(0)
-        self.cb_var7.set(0)
+#create functions
+def update_ShoppingListBox():
+    #clear current list
+    clear_ShoppingListBox()
+    #populate listbox
+    for food in foods:
+        ShoppingListBox.insert('end', food)
+    
 
-        # Create the Checkbutton widgets in the top_frame.
-        self.cb1 = tkinter.Checkbutton(self.top_frame, \
-                   text='', variable=self.cb_var1)
-        self.cb2 = tkinter.Checkbutton(self.top_frame, \
-                   text='', variable=self.cb_var2)
-        self.cb3 = tkinter.Checkbutton(self.top_frame, \
-                   text='', variable=self.cb_var3)
-        self.cb4 = tkinter.Checkbutton(self.top_frame, \
-                   text='', variable=self.cb_var4)
-        self.cb5 = tkinter.Checkbutton(self.top_frame, \
-                   text='', variable=self.cb_var5)
-        self.cb6 = tkinter.Checkbutton(self.top_frame, \
-                   text='', variable=self.cb_var6)
-        self.cb7 = tkinter.Checkbutton(self.top_frame, \
-                   text='', variable=self.cb_var7)
-        
+def clear_ShoppingListBox():
+    ShoppingListBox.delete(0, 'end')
+    
+def add_Item():
+    #get task to add
+    food = txt_input.get()
+    #making sure task is not empty
+    if food !="":
+        #append to the list
+        foods.append(food)
+        #updating listbox
+        update_ShoppingListBox()
+    else:
+        lbl_display['text'] = 'Please enter an Item'
+    txt_input.delete(0, 'end')
 
-        # Pack the Checkbuttons.
-        self.cb1.pack()
-        self.cb2.pack()
-        self.cb3.pack()
-        self.cb4.pack()
-        self.cb5.pack()
-        self.cb6.pack()
-        self.cb7.pack()
+def delete_all():
+    #make local
+    global foods
+    #clearing list
+    foods = []
+    #updating
+    update_ShoppingListBox()
 
-        # Create an OK button and a Quit button.
-        self.ok_button = tkinter.Button(self.bottom_frame, \
-                    text='OK', command=self.show_choice)
-        self.quit_button = tkinter.Button(self.bottom_frame, \
-                    text='Quit', command=self.main_window.destroy)
+def Sort_Asc():
+    #sort list
+    foods.sort()
+    #updating
+    update_ShoppingListBox()
 
-        # Pack the Buttons.
-        self.ok_button.pack(side='left')
-        self.quit_button.pack(side='left')
+#NEED TO SHOW TOTAL PRICE OR PRICES******
 
-        # Pack the frames.
-        self.top_frame.pack()
-        self.bottom_frame.pack()
+def Num_Items():
+    Num_Items = len(foods)
+    message = 'Number of Items on the List: %s' %Num_Items
+    lbl_display['text']= message
+    
+    #NOT SURE HOW TO GET NUMBER TO SHOW UP?????
 
-        # Start the mainloop.
-        tkinter.mainloop()
+def Delete1():
+    #be able to select item
+    food = ShoppingListBox.get('active')
+    if food in foods:
+        foods.remove(food)
+    #updating
+    update_ShoppingListBox()
 
-    # The show_choice method is the callback function for the OK button.
+def QuanOfItem():
+    #change the quantity dictionary above to a list
+    QuanList = list(ItemQuan.values())
+    #Exception handling for users who enter a word (Three) instead of a number (3)
+    try:
+        QuanVal = int(input('How many of this item do you want to buy?'))
+    except:
+        QuanVal = int(input('That answer isn\'t a whole number. Please try again. How many of this item do you want to buy?'))
+    #Changes the quantity value of the last item in the list. Should be the newest item you created.
+    QuanList[-1] = QuanVal
+    print(foods[-1], QuanList[-1])
 
-    def show_choice(self):
-       # Create a message string.
-        self.message = 'You selected:\n'
-        total_cost = 0
+def PriceOfItem():
+    #change the price dictionary above to a list
+    PriceList = list(ItemPrice.values())
+    PriceValue = int(input('How much is each item you want to buy?'))
+    
+    #Changes the price of the item. the item should be the newest addition to the list.
+    PriceList[-1] = PriceValue
+    print(foods[-1], PriceList[-1])
 
-        # Determine which Checkbuttons are selected and
-        # build the message string accordingly.
-        if self.cb_var1.get() == 1:
-          self.message = self.message + 'My Shopping List'
-        if self.cb_var2.get() == 1:
-          self.message = self.message + 'Add Item'
-        if self.cb_var3.get() == 1:
-          self.message = self.message + ''
-        if self.cb_var4.get() == 1:
-          self.message = self.message + ''
-        if self.cb_var5.get() == 1:
-          self.message = self.message + ''
-        if self.cb_var6.get() == 1:
-          self.message = self.message + ''
-        if self.cb_var7.get() == 1:
-          self.message = self.message + ''
+def SaveToFile():
+    #open the file
+    f = open('TextFile.txt','w')
+    #convert the item list to a string
+    g = foods
+    g = ''.join(foods)
+    #write the item list to the file.
+    f.write(g)
+    #close the file.
+    f.close()
+    return print('Done')
 
-        if self.cb_var1.get() == 1:
-            total_cost = (total_cost + 30)
-        if self.cb_var2.get() == 1:
-            total_cost = (total_cost + 20)
-        if self.cb_var3.get() == 1:
-            total_cost = (total_cost + 40)
-        if self.cb_var4.get() == 1:
-            total_cost = (total_cost + 100)
-        if self.cb_var5.get() == 1:
-            total_cost = (total_cost + 35)
-        if self.cb_var6.get() == 1:
-            total_cost = (total_cost + 200)
-        if self.cb_var7.get() == 1:
-            total_cost = (total_cost + 20)
 
-        # Display the message in an info dialog box.
-        tkinter.messagebox.showinfo('Selection', self.message)
-        tkinter.messagebox.showinfo('Service Total',('Total cost: $%s' % total_cost))
 
-# Create an instance of the ShoppingList class.
-my_gui = ShoppingList()
+root = Tk()
+#change title
+root.title('My Shopping List!')
+canvas = Canvas(root, width = 240, height = 240) 
+#change background color
+root.configure(background="#FFFFAA")
+Label(root, text='Shopping List!!', bg="#FFFFAA", fg="blue", font="Times 16 bold").pack()
+canvas.pack()
+My_image = PhotoImage(file='C:\\Users\\kd0dh\\Desktop\\Intro to Prog\\Final Project\\image.gif')
+canvas.create_image(0, 0, anchor = NW, image=My_image)
+#change size of window
+root.geometry("600x1100+700+800")
 
+
+
+lbl_title = tkinter.Label (root, text = 'Add to List', bg= '#FFFFAA', font= 'bold')
+lbl_title.pack()
+
+lbl_display = tkinter.Label (root, text = '', bg= '#FFFFAA')
+lbl_display.pack()
+
+txt_input = tkinter.Entry(root, width= 15)
+txt_input.pack()
+
+btn_add_Item = tkinter.Button(root, text= "Add Item", fg ='green', bg = 'white', command=add_Item)
+btn_add_Item.pack()
+
+btn_add_Quan = tkinter.Button(root, text= 'Add Quantity', fg= 'green', bg= 'white', command=QuanOfItem)
+btn_add_Quan.pack()
+
+btn_add_Price = tkinter.Button(root, text= 'Add Price', fg= 'green', bg= 'white', command=PriceOfItem)
+btn_add_Price.pack()
+
+btn_delete_all = tkinter.Button(root, text= "Delete All", fg ='green', bg = 'white', command=delete_all)
+btn_delete_all.pack()
+
+btn_Sort_Asc = tkinter.Button(root, text= "Sort A to Z", fg ='green', bg = 'white', command=Sort_Asc)
+btn_Sort_Asc.pack()
+
+btn_Num_Items = tkinter.Button(root, text= "Number of Items on List", fg ='green', bg = 'white', command=Num_Items)
+btn_Num_Items.pack()
+
+btn_Delete1 = tkinter.Button(root, text= "Delete", fg ='green', bg = 'white', command=Delete1)
+btn_Delete1.pack()
+
+btn_Save = tkinter.Button(root, text= "Save", fg ='green', bg = 'white', command=SaveToFile)
+btn_Save.pack()
+
+btn_Exit = tkinter.Button(root, text= "Exit", fg ='green', bg = 'white', command=exit)
+btn_Exit.pack()
+
+ShoppingListBox = tkinter.Listbox(root)
+ShoppingListBox.pack()
+
+root.mainloop()
